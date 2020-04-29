@@ -56,11 +56,6 @@ class CrowdAPI:
                               auth=self.auth, data=json.dumps(data), verify=self.verify_ssl, timeout=self.timeout)
         return req
 
-    def api_delete(self, query, data):
-        req = requests.delete(self.api_url + query, headers={"Content-Type": "application/json", "Accept": "application/json"},
-                              auth=self.auth, data=json.dumps(data), verify=self.verify_ssl, timeout=self.timeout)
-        return req
-
     def get_user(self, **kwargs):
         if "username" not in kwargs:
             raise ValueError("Must pass username")
